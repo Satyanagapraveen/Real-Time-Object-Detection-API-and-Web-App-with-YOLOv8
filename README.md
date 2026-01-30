@@ -23,7 +23,7 @@ A containerized web application and REST API for real-time object detection usin
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/Satyanagapraveen/Real-Time-Object-Detection-API-and-Web-App-with-YOLOv8.git
 cd "Object Detection YOLOV8"
 ```
 
@@ -387,9 +387,7 @@ docker-compose logs -f ui
 4. Test thoroughly
 5. Submit a pull request
 
-## 📄 License
 
-This project is provided as-is for educational and commercial purposes.
 
 ## 🙏 Acknowledgments
 
@@ -408,4 +406,3 @@ For issues and questions:
 
 ---
 
-**Built with ❤️ using YOLOv8, FastAPI, and Streamlit**
