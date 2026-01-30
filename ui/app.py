@@ -56,8 +56,8 @@ with col1:
     st.subheader("📤 Upload Image")
     uploaded_file = st.file_uploader(
         "Choose an image...", 
-        type=["jpg", "jpeg", "png"],
-        help="Supported formats: JPG, JPEG, PNG"
+        type=["jpg", "jpeg", "png", "webp", "gif", "bmp"],
+        help="Supported formats: JPG, JPEG, PNG, WebP, GIF, BMP"
     )
     
     if uploaded_file is not None:
