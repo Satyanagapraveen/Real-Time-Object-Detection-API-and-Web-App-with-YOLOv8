@@ -99,16 +99,23 @@ with col2:
                         if detections:
                             st.markdown("#### 📋 Detailed Detections")
                             
-                            # Create a table view
-                            st.markdown("| # | Label | Confidence | Bounding Box |")
-                            st.markdown("|---|-------|-----------|--------------|")
-                            
+                            # Create a proper table using pandas DataFrame
+                            import pandas as pd
+                            table_data = []
                             for idx, detection in enumerate(detections, 1):
                                 label = detection["label"]
                                 score = detection["score"]
                                 box = detection["box"]
                                 box_str = f"[{box[0]}, {box[1]}, {box[2]}, {box[3]}]"
-                                st.markdown(f"| {idx} | {label} | {score:.2%} | {box_str} |")
+                                table_data.append({
+                                    "#": idx,
+                                    "Label": label,
+                                    "Confidence": f"{score:.2%}",
+                                    "Bounding Box": box_str
+                                })
+                            
+                            df = pd.DataFrame(table_data)
+                            st.dataframe(df, use_container_width=True, hide_index=True)
                             
                             # Download JSON results
                             st.markdown("---")
